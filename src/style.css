@@ -1,0 +1,99 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    overflow-x: hidden;
+    background-color: rgb(24, 24, 24);
+}
+
+.webgl
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    mix-blend-mode:exclusion;
+    opacity: 45%;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+}
+
+
+#name-svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+}
+
+#main {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(20, auto);
+}
+
+#main > div {
+    background-color: rgb(24, 24, 24);
+
+    height: 100vh;
+}
+
+h1 {
+    font-size: 5em;
+    margin-top: 100vh;
+    position: absolute;
+    float: left; 
+    float: right;    
+    color: white;
+    top: 40%;
+    left: 12%;
+    opacity: 0;
+    z-index: 2;
+}
+
+p {
+    font-size: 2em;
+    margin-top: 112vh;
+    position: absolute;
+    float: left; 
+    float: right;    
+    color: white;
+    top: 40%;
+    left: 12%;
+    opacity: 0;
+    z-index: 2;
+}
+
+
+#Hibutton {
+    font-size: 2em;
+    margin-top: 120vh;
+    position: absolute;
+    float: left; 
+    float: right;    
+    left: 12%;
+    opacity: 0;
+    z-index: 3;
+    width: 20vw;
+}
+
+#intro p {
+    font-size: 2em;
+    margin-top: 120vh;
+    position: absolute;
+    float: left; 
+    float: right;    
+    left: 12%;
+    color: rgb(255, 255, 255,);
+    z-index: 3;
+    width: 50vw;
+}
