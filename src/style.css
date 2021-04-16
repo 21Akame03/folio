@@ -34,6 +34,11 @@ body
     stroke-dashoffset: 0;
 }
 
+#subtitle-svg path {
+    z-index: 2;
+    bottom: 20vh;
+}
+
 #main {
     height: 100vh;
     width: 100vw;
@@ -43,57 +48,52 @@ body
 
 #main > div {
     background-color: rgb(24, 24, 24);
-
     height: 100vh;
 }
 
 h1 {
     font-size: 5em;
     margin-top: 100vh;
-    position: absolute;
-    float: left; 
-    float: right;    
+    position: absolute;   
     color: white;
     top: 40%;
     left: 12%;
     opacity: 0;
     z-index: 2;
+    font-style: italic;
 }
 
-p {
+#name-intro {
     font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 112vh;
-    position: absolute;
-    float: left; 
-    float: right;    
+    position: absolute;  
     color: white;
     top: 40%;
     left: 12%;
     opacity: 0;
     z-index: 2;
+    font-style: italic;
 }
 
 
 #Hibutton {
     font-size: 2em;
-    margin-top: 120vh;
-    position: absolute;
-    float: left; 
-    float: right;    
+    margin-top: 130vh;
+    position: absolute;  
     left: 12%;
     opacity: 0;
     z-index: 3;
     width: 20vw;
 }
 
-#intro p {
-    font-size: 2em;
-    margin-top: 120vh;
+#intro {
+    display: flex;
+    z-index: 2;
+    color: white;
+    font-size: 1em;
     position: absolute;
-    float: left; 
-    float: right;    
     left: 12%;
-    color: rgb(255, 255, 255,);
-    z-index: 3;
-    width: 50vw;
+    margin-top: 45vh;
+    opacity: 0;
 }

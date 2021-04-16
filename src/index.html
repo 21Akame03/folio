@@ -24,7 +24,7 @@
                 targets: "#name-svg path",
                 strokeDashoffset: [anime.setDashoffset, 0],
                 easing: "linear",
-                delay:10,
+                delay:1000,
                 duration: 10000,
                 direction: "alternate",
                 loop:true,
@@ -35,15 +35,17 @@
 
     <!-- Alone forever -->
     <h1>Hi </h1>
-    <p> My name is Ubdhoot Ashitosh</p>
+    <p id="name-intro"> My name is Ubdhoot Ashitosh</p>
+    
+    <!-- main content -->
+    <main id="intro">
+        <p >
+            
+        </p>
+    </main> 
 
-    <button id="Hibutton">Hi Ashitosh</button>
+    <button id="Hibutton">Projects</button>
     <!-- Damn -->
-
-    <!-- Intro paragraph boring -->
-    <div id="intro">
-        
-    </div>
    
 
     <!-- Introduction screen -->
@@ -71,71 +73,112 @@
         <div></div>
 
         <script>
-            let tl = anime.timeline({
-                easing: "easeOutQuad",
-                duration: 1000,
-                loop: true,
-                delay: 500,
-                endDelay: 500
-            });
+            // normal version 
+            function normal() {
+                let tl = anime.timeline({
+                    easing: "easeOutQuad",
+                    duration: 1000,
+                    loop: true,
+                    delay: 500,
+                    endDelay: 500,
+                    direction: "alternate"
+                });
 
-            tl.add({
-                targets: 'section div',
-                width: "95%",
-                backgroundColor: "rgb(33, 33, 33)",
-                borderRadius: "0px",
-                direction: "alternate",
-                delay: anime.stagger(100)
-            });
+                tl.add({
+                    targets: '#main div',
+                    width: "95%",
+                    backgroundColor: "rgb(33, 33, 33)",
+                    borderRadius: "0px",
+                    direction: "alternate",
+                    delay: anime.stagger(100)
+                });
 
-            tl.add({
-                targets: 'section div',
-                width: "85%",
-                borderRadius: "3px",
-                backgroundColor: "rgb(35, 20, 143)",
-                delay: anime.stagger(100)
-            });
+                tl.add({
+                    targets: "#Hibutton",
+                    backgroundColor: "rgb(33, 33, 33)",
+                    color: "rgb(255, 255, 255)",
+                    duration: 500
+                })
 
-            tl.add({
-                targets: 'section div',
-                width: "95%",
-                borderRadius: "5px",
-                backgroundColor: "rgb(60, 60, 60)",
-                delay: anime.stagger(100)
-            });
+                tl.add({
+                    targets: '#main div',
+                    width: "85%",
+                    borderRadius: "3px",
+                    backgroundColor: "rgb(35, 20, 143)",
+                    delay: anime.stagger(100)
+                });
 
-            tl.add({
-                targets: 'section div',
-                width: "85%",
-                borderRadius: "5px",
-                backgroundColor: "rgb(92, 10, 10)",
-                delay: anime.stagger(100)
-            });
+                tl.add({
+                    targets: "#Hibutton",
+                    backgroundColor: "rgb(35, 20, 143)",
+                    color: "rgb(255, 255, 255)"
+                })
 
-            tl.add({
-                targets: 'section div',
-                width: "95%",
-                borderRadius: "5px",
-                backgroundColor: "rgb(24, 24, 24)",
-                delay: anime.stagger(100)
-            });
+                tl.add({
+                    targets: '#main div',
+                    width: "95%",
+                    borderRadius: "5px",
+                    backgroundColor: "rgb(60, 60, 60)",
+                    delay: anime.stagger(100)
+                });
 
-            
+                tl.add({
+                    targets: "#Hibutton",
+                    backgroundColor: "rgb(60, 60, 60)",
+                    color: "rgb(255, 255, 255)"
+                })
 
-            anime({
-                targets: 'h1, p, #Hibutton',
-                easing: "easeInOutQuad",
-                top: "20%",
-                opacity: 1,
-                duration: 4000
-            }, "-1600");
+                tl.add({
+                    targets: '#main div',
+                    width: "85%",
+                    borderRadius: "5px",
+                    backgroundColor: "rgb(92, 10, 10)",
+                    delay: anime.stagger(100)
+                });
 
-            anime({
-                targets: "#Hibutton",
-                easing: "easeInOutSine",
-                borderRadius: "20px",
-                backgroundColor: "rgb(0, 102, 255)"
-            }, "-6")
+                tl.add({
+                    targets: "#Hibutton",
+                    backgroundColor: "rgb(92, 10, 10)",
+                    color: "rgb(255, 255, 255)"
+                })
+
+                tl.add({
+                    targets: '#main div',
+                    width: "95%",
+                    borderRadius: "5px",
+                    backgroundColor: "rgb(24, 24, 24)",
+                    delay: anime.stagger(100)
+                });
+
+                tl.add({
+                    targets: "#Hibutton",
+                    backgroundColor: "rgb(24, 24, 24)",
+                    color: "rgb(255, 255, 255)"
+                });
+
+                
+                // buttons and text
+                anime({
+                    targets: 'h1, #name-intro, #Hibutton',
+                    easing: "easeInOutQuad",
+                    top: "20%",
+                    opacity: 1,
+                    duration: 2000
+                }, "-1600");
+
+                anime({
+                    targets: "#Hibutton",
+                    easing: "easeInOutSine",
+                    borderRadius: "20px",
+                    fontFamily: 'Gill Sans',
+                    fontStyle: "italic",
+                    backgroundColor: "rgb(196, 29, 46)"
+                }, "-6");
+            }
+
+            normal();
+
+
 
             // on click for projects
             let rotateOnClick = anime({
@@ -149,44 +192,59 @@
                 autoplay: false
             },);
 
-            let showIntro = anime({
-                targets: "#intro",
-                opacity: 1,
-                easing: "easeInOutQuart",
-                duration: 750,
-                color: "rgb(255, 255, 255,)"
 
-            });
+            function showIntro () { 
+                let tl = anime.timeline({
+                    easing: "easeInOutQuad",
+                    duration: 750,
+                });
 
-            function createIntroParagraph () {
-                //create the tag
-                let tag = document.createElement("p");
-                // create the text
-                let text = document.createTextNode("Helio damb dumb");
+                tl.add({
+                    targets: "#Hibutton",
+                    opacity: 0,
+                });
 
-                // add the text to the paragraph
-                tag.appendChild(text);
+                tl.add({
+                    targets: "#intro",
+                    opacity: 1,
+                    endDelay: 5000
+                });
 
-                // locate the parent tag
-                let element = document.getElementById("intro");
+                anime({
+                    targets: ".webgl",
+                    opacity: "50%",
+                    mixBlendMode: "none",
+                    easing: "easeInOutQuart",
+                    translateY: "105vh",
 
-                // add the new paragraph to the parent tag
-                element.appendChild(tag);
+                })
+
+                anime({
+                    targets: "#main > div",
+                    easing: "easeInOutSine",
+                    opacity: 0.08,
+                    duration: 5000
+                })
             }
+
 
             let introbutton = document.getElementById("Hibutton")
             introbutton.addEventListener("mousedown", () => {
                 rotateOnClick.play();
+                showIntro();
 
-                introbutton.parentNode.removeChild(introbutton);
+               
 
-                createIntroParagraph();
-                showIntro.play();
+
+
             });
 
         </script>
     </section>
+
+    <section id="fun">
+
+    </section>
        
-      
 </body>
 </html>
