@@ -79,7 +79,7 @@
                     easing: "easeOutQuad",
                     duration: 1000,
                     loop: true,
-                    delay: 500,
+                    delay: 100,
                     endDelay: 500,
                     direction: "alternate"
                 });
@@ -97,7 +97,6 @@
                     targets: "#Hibutton",
                     backgroundColor: "rgb(33, 33, 33)",
                     color: "rgb(255, 255, 255)",
-                    duration: 500
                 })
 
                 tl.add({
@@ -222,7 +221,7 @@
                 anime({
                     targets: "#main > div",
                     easing: "easeInOutSine",
-                    opacity: 0.08,
+                    opacity: 0.1,
                     duration: 5000
                 })
             }
@@ -232,13 +231,7 @@
             introbutton.addEventListener("mousedown", () => {
                 rotateOnClick.play();
                 showIntro();
-
-               
-
-
-
             });
-
         </script>
     </section>
 
